@@ -2,3 +2,15 @@ div {
   position:relative;
   top:100px;
 }
+.style-each-el {
+  border: 2px solid #990066;
+  padding: 0px;
+  position: absolute;
+  width: 25px;
+  /* margin: 0px; */
+  height: 25px;
+  text-align: center;
+  font-family: cursive;
+  /* font-size: xx-large; */
+  color: #F50;
+}
