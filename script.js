@@ -14,7 +14,7 @@ $(document).ready(function() {
     return array;
   }
 
-// swap
+// swap two elements in array
 
   function swap(array, i1, i2) {
       var a = array[i1];
@@ -22,32 +22,50 @@ $(document).ready(function() {
       array[i2] = a;
   }
 
-// swapView
+// swap two elements using jquery.animate
 
   function swapView(array, arrayView, i, j) {
     swap(array, i, j);
 
-    var a = arrayView[i].animate({ left: j * 40}).promise();
+    var a1 = arrayView[i].animate({ top: 60}, 350, 'easeInOutCubic').promise();
+    var a2 = arrayView[i].animate({ left: j * 40}, 350, 'easeInOutCubic').promise();
+    var a3 = arrayView[i].animate({ top: 0}, 350, 'easeInOutCubic').promise();
+    var b1 = arrayView[j].animate({ top: 100}, 350, 'easeInOutCubic').promise();
+    var b2 = arrayView[j].animate({ left: i * 40}, 350, 'easeInOutCubic').promise();
+    var b3 = arrayView[j].animate({ top: 0}, 350, 'easeInOutCubic').promise();
 
-    var b = arrayView[j].animate({ left: i * 40}).promise();
-
-    return $.when(a, b).then(function() {
-      swap(arrayView, i, j);
+    return $.when(a1, b1).then(function() {
+      return $.when(a2, b2)}).then(function() {
+        return $.when(a3, b3)}).then(function() {
+          swap(arrayView, i, j);
     });
   }
 
 // render array
 
+  var array;
+  var arrayView;
   $('.first').click(function() {
 
-    var array = createRandomArray(10, 0, 10);
-    var arrayView = array.map(function(el, index) {
+     array = createRandomArray(10, 0, 10);
+     arrayView = array.map(function(el, index) {
       return $('<span>')
         .text(el)
         .addClass('style-each-el')
         .css({ left: index * 40 });
     });
     $('#array-placeholder').html(arrayView);
+  });
+
+// sort array
+
+  $('.second').click(function() {
+
+// checking array for existence
+
+    if ( array == null) {
+      alert("Sorry, you've forgotten to create collection");
+    }
 
     var nextStep = function(i, j) {
       function next_i_j() {
@@ -56,9 +74,12 @@ $(document).ready(function() {
            j = 0; i +=1
         }
       }
+// checking recursion for the end
 
       if ( i >= array.length) { return; }
-      
+
+// swap elements of the array based on conditions
+
       if ( array[j+1] < array[j]) {
         swapView(array, arrayView, j+1, j).then(function() {
           next_i_j(); nextStep(i, j)

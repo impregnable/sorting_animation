@@ -1,16 +1,68 @@
-div {
-  position:relative;
-  top:100px;
+#array-placeholder {
+  position: relative;
+  top: 100px;
+}
+#instructions {
+  position: absolute;
+  top: 300px;
+  left: 15px;
+  display: inline-block;
+  padding: 5px;
+  width: 250px;
+  height: 250px;
+  border: 3px dotted #E74C3C;
+}
+#instructions li span{
+  color: #000;
+  font-size: 18px;
+}
+#instructions li {
+  color: #E74C3C;
+  padding-bottom: 30px;
 }
 .style-each-el {
   border: 2px solid #990066;
   padding: 0px;
   position: absolute;
   width: 25px;
-  /* margin: 0px; */
   height: 25px;
   text-align: center;
   font-family: cursive;
-  /* font-size: xx-large; */
   color: #F50;
+}
+.animate
+{
+	transition: all 0.1s;
+	-webkit-transition: all 0.1s;
+}
+.action-button
+{
+	position: relative;
+	padding: 10px 15px;
+  margin: 0px 10px 10px 0px;
+  float: left;
+	border-radius: 10px;
+	font-family: 'Pacifico', cursive;
+	font-size: 19px;
+	color: #FFF;
+	text-decoration: none;
+  outline: none;
+}
+.blue
+{
+	background-color: #3498DB;
+	border-bottom: 5px solid #2980B9;
+	text-shadow: 0px -2px #2980B9;
+}
+.red
+{
+	background-color: #E74C3C;
+	border-bottom: 5px solid #BD3E31;
+	text-shadow: 0px -2px #BD3E31;
+}
+.action-button:active
+{
+	transform: translate(0px,5px);
+  -webkit-transform: translate(0px,5px);
+	border-bottom: 1px solid;
 }

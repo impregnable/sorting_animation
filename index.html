@@ -3,32 +3,18 @@
 <head>
   <link rel="stylesheet" href="style.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
   <script src='script.js'></script>
 </head>
 <body>
-  <button class='first'>create random array for sorting</button>
+  <button class='first action-button animate red'>Create</button>
+  <button class='second action-button animate blue'>Sort</button>
   <div id='array-placeholder'></div>
+  <div id='instructions'>
+    <ul>
+      <li><span>to create random array for sorting please push the red button with label 'Create'</span></li>
+      <li><span>then, to watch process of Bubble Sort please push the blue button with label 'Sort'</span></li>
+    </ul>
+  </div>
 </body>
 </html>
-
-<!--
-
-Необходимо «оживить», т.е. отобразить графически процесс сортировки целых чисел, чтобы
-пользователь мог воочию наблюдать как сортируются данные.
-Предлагается на выбор два алгоритма которые очень легко представить визуально:
-1) Сортировка пузырьком – наглядное «всплытие» элементов в массиве.
-2) Сортировка бинарным деревом - посторение дерева, а потом его обход в правильном
-порядке.
-Чем красивее будет представлен процесс, тем лучше, приветствуется использование CSS и
-картинок. Креатив также приветствуется.
-Страничка также должна уметь генерировать себе наборы данных для сортировки и показывать их
-до и после сортировки.
-На странице обязательно написать инструкцию как ей пользоваться.
-Использование библиотек никак не ограничивается, плюсом будет использование jQuery. Именно
-ее мы активно используем.
-Результатом должна быть html страница с JavaScript, CSS, картинками, открыв которую в браузере
-можно будет выполнять описанный сценарий.
-Крайне желательно организовать html, js, css код по разным файлам. В js коде организовать
-работу с классами и оставить комментарии поясняющие что делается и зачем.
-
--->
